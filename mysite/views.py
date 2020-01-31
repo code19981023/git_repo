@@ -11,4 +11,20 @@ def query(request, qstr=''):
 		'id_4':'全家',
 		'id_5':'7-11',
 		}
-	return JsonResponse(res)
+
+	if qstr == '迷克夏':
+		res = [
+		{
+		'name':'珍珠紅茶拿鐵',
+		'price':'$60',
+		'type':'有料',
+		'store':'迷克夏',
+		},
+		{
+		'name':'紅茶拿鐵',
+		'price':'$50',
+		'type':'鮮奶茶',
+		'store':'迷克夏',
+		}
+		]
+	return JsonResponse(res, safe=False)
