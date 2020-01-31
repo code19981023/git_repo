@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '538h+r+ieqd$pf(_36!_lfye#nf)8u6e6ed&wwp-_)!b+ru605'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -119,3 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+import dj_database_url
+#db_from_env = dj_database_url.config(conn_max_age=500) 使連結變得更久
+DATABASES['default'].update(db_from_env)
