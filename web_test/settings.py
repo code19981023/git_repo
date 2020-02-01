@@ -25,7 +25,7 @@ SECRET_KEY = '538h+r+ieqd$pf(_36!_lfye#nf)8u6e6ed&wwp-_)!b+ru605'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] # "*"代表全網域都可以連上此網頁程式
 
 
 # Application definition

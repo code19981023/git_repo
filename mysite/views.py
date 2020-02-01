@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse
 
 # Create your views here.
 def query(request, qstr=''):
+	res = dict() # 指定res物件為dict(字典)
 	if qstr == 'allstore':
 		res = {
 		'id_1':'迷克夏',
@@ -12,7 +13,7 @@ def query(request, qstr=''):
 		'id_5':'7-11',
 		}
 
-	if qstr == '迷克夏':
+	elif qstr == '迷克夏':
 		res = [
 		{
 		'name':'珍珠紅茶拿鐵',
@@ -27,4 +28,7 @@ def query(request, qstr=''):
 		'store':'迷克夏',
 		}
 		]
-	return JsonResponse(res, safe=False)
+	return JsonResponse(res, safe=False) 
+	#將safe設為False，Django才會允許非dict物件變成序列(不然會出Error)
+
+		
